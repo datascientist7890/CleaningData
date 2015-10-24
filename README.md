@@ -4,7 +4,7 @@ This is the ReadMe file associated with the Coursera Getting and Cleaning Data P
 
 # Getting and Cleaning Data: Course Project
 
-This repository describes the work I have been doing for the Coursera course "Getting and Cleaning data".
+This repository describes the work I have been doing for the Coursera course "Getting and Cleaning Data".
 
 # Raw Data
 
