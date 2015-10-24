@@ -120,8 +120,10 @@ Looking at the first 10 rows in the data set we have:
 	 8:       2           5       STANDING tBodyAcc-mean()-X 0.2746005
 	 9:       2           5       STANDING tBodyAcc-mean()-X 0.2725287
 	10:       2           5       STANDING tBodyAcc-mean()-X 0.2757457
+
+**Row 1: subject = 2, Activity_ID = 5, Activity Label = Standing, variable = BodyAcc-mean()-X 0 , Value=.2571778
  
-This means that there are many means associated with subject 2, activity 5 and  variable = tBodyAcc-mean()-X.
+This means that there are many means associated with subject 2, activity 5 and variable = tBodyAcc-mean()-X.
 
 * tidy_data: Using the dcast function we create the tidy data set. The input into the dcast function are: (1) melt_alldata, (2) subject + Activity_Label ~ variable and (3) mean. The dcast function calculates the mean for each of the variables. Remember, the variables used to be the features (measurements).As an example, part of the output of the dcast function will be the mean for the  tBodyAcc-mean()-X variable (see above bullet). The end result is a data frame that consist of 180 rows and 81 columns. This makes sense. There are 30 subjects, 6 activity levels and 79 features (measurements) that are being tracked. Each of the rows  in the tidy_data set consists of: (1) subject, (2) Activity_Label and (3) 79 values for a total of 81 elements in a row. Therefore, the tidy data set will have 180 rows and 81 columns.
 
