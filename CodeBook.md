@@ -83,6 +83,8 @@ I downloaded the file by hand, extracted it and put it into a directory on my PC
 
 # Variables Used and Manipulation of Variables:
 
+Used the following describes the variables used and how I manipulated/used them in the code (run_analsis.R):
+
 * activity_labels: This variable contains the 6 activities. It is extracted from the activity labels file. We are using the second column.
 * features: This variable contains a list of 561 features (measurements). We are using the second column of the feature file.
 * match_features:	This variable is a TRUE/FALSE vector. TRUE = (mean or standard deviation). FALSE != (mean or standard deviation).
