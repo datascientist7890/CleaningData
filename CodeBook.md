@@ -43,6 +43,8 @@ I downloaded the file by hand, extracted it and put it into a directory on my PC
 
 # Data Used: Files and File Content
 
+The following describes the files that  were used and their contents:
+
 * subject_test (file): This file contains 2947 rows and one column.
  ** The numbers in the rows are the subjects. Subjects are identified by numbers from 1 to 30 (30 subjects/people took part in the experiment).  ** The subjects are people that participated in the experiment.  ** Read this file into R and then used the nrow() and ncol() functions to identify the number of rows and columns. Also looked at the file using WordPad.
 * X_test (file)
@@ -83,7 +85,7 @@ I downloaded the file by hand, extracted it and put it into a directory on my PC
 
 # Variables Used and Manipulation of Variables:
 
-Used the following describes the variables used and how I manipulated/used them in the code (run_analsis.R):
+The following describes the variables used and how I manipulated/used them in the code (run_analsis.R):
 
 * activity_labels: This variable contains the 6 activities. It is extracted from the activity labels file. We are using the second column.
 * features: This variable contains a list of 561 features (measurements). We are using the second column of the feature file.
