@@ -18,10 +18,11 @@ The run_analysis.R code takes the test files and the training files and combines
 
 After combining testing and training data, labels are added and only columns that have to do with mean and standard deviation are kept from the features. The features are the column names. Features are really measurements.
 
-The end result of the run_analysis.R code will be a tidy data set containing the means of all the features (measurements) for each subject (person who participated in experiment) and per activity. This tidy dataset file tidy.txt, which can also be found in this repository.
+The end result of the run_analysis.R code will be a tidy data set containing the means of all the features (measurements) for each subject (person who participated in the experiment) and for each activity. The end result is a tidy data set that consists if 180 rows and 81 columns. 
 
 # About the Code Book
 
-The CodeBook.md file explains the variables used, the transformations performed on the data,  and the tidy data set,
+The CodeBook.md file explains the variables used, the transformations performed on the data, and the tidy data set.
+The CodeBook.md file also explains how the original data was reduced to the tidy data set.
 
 
