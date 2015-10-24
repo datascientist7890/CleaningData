@@ -41,7 +41,8 @@ The data to be analyzed is located at these links:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 I downloaded the file by hand, extracted it and put it into a directory on my PC.
 
-#Data Used: Files and File Content
+# Data Used: Files and File Content
+
 * subject_test (file): This file contains 2947 rows and one column.
  ** The numbers in the rows are the subjects. Subjects are identified by numbers from 1 to 30 (30 subjects/people took part in the experiment).
  ** The subjects are people that participated in the experiment.
@@ -84,6 +85,7 @@ I downloaded the file by hand, extracted it and put it into a directory on my PC
 ** File was not used in analysis. Just used to better understand what features mean.
 
 # Variables Used and Manipulation of Variables:
+
 * activity_labels: This variable contains the 6 activities. It is extracted from the activity labels file. We are using the second column.
 * features: o	This variable contains a list of 561 features (measurements). We are using the second column of the feature file.
 * match_features: o	This variable is a TRUE/FASLE vector. TRUE = (mean or standard deviation). FALSE != (mean or standard deviation).
@@ -103,7 +105,7 @@ I downloaded the file by hand, extracted it and put it into a directory on my PC
 * alldata_test_rows: o	This is a variable I used to check how many of the rows of the alldata data frame are associated with subject (participant) = 6. o	The result is that there are 325 rows (observations for subject 6). I did similar checks for other subjects and many of the subjects had about 330 observations. An observation is a row in the alldata data frame. o	The same variable was used to see how many observations there were for subject 4 and activity = 5. Turns out that there are 56 observations for subject 4 and activity = 5 (activity 5 = Standing). I did this checking to see whether the dimensions of the alldata frame make sense. Overall, there are 30 subjects (persons taking part in experiment) and there are about 340 observations for each of the subjects. This yields a data frame that is has approximately 10,200 rows and 82 columns.
 * id_lables: o	This variable just contains three labels: “subject”, “Acivity_ID” and “Activity_Label”
 * alldata_labels: 	This variable is created by taking the difference between colnames(alldata) and id_labels. o	The alldata_lables variable consists of 79 values. Those values are the column names like: tBodyAcc-mean()-X, fBodyBodyGyroMag-std(), etc.
-*	melt_alldata: o	This variable is produced by “melting” the alldata data frame. The source is the alldata data frame. The id variables are the id_lables and the measure variables are the alldata_labels variables. There are 3 items in the id_lables. They are “subject”, “Activity_ID” and “Activity_Label”. There are 79 items in the alldata_lables. o	The end result of the “melt” function is a data frame that contains 5 columns and 813,621 rows. Essentially, the melt function creates a skinny data frame where each subject, for each activity, for each variable (used to be the called features) has a value. The 10,299x82 data frame was converted into a data frame with 5 columns and 813,621 rows. Essentially 10,299*79 = 813,621. o	The columns are: “subject” “Activity_ID”  “Activity_Label”      “variable”     “value”. o	Looking at the first 10 rows in the data set we have:
+*	melt_alldata: o	This variable is produced by “melting” the alldata data frame. The source is the alldata data frame. The id variables are the id_lables and the measure variables are the alldata_labels variables. There are 3 items in the id_lables. They are “subject”, “Activity_ID” and “Activity_Label”. There are 79 items in the alldata_lables. o	The end result of the “melt” function is a data frame that contains 5 columns and 813,621 rows. Essentially, the melt function creates a skinny data frame where each subject, for each activity, for each variable (used to be the called features) has a value. The 10,299x82 data frame was converted into a data frame with 5 columns and 813,621 rows. Essentially 10,299*79 = 813,621. o	The columns are: “subject” “Activity_ID”  “Activity_Label”  “variable” “value”. Looking at the first 10 rows in the data set we have:
 	    subject Activity_ID Activity_Label          variable     value
 	 1:       2           5       STANDING tBodyAcc-mean()-X 0.2571778
 	 2:       2           5       STANDING tBodyAcc-mean()-X 0.2860267
@@ -115,6 +117,8 @@ I downloaded the file by hand, extracted it and put it into a directory on my PC
 	 8:       2           5       STANDING tBodyAcc-mean()-X 0.2746005
 	 9:       2           5       STANDING tBodyAcc-mean()-X 0.2725287
 	10:       2           5       STANDING tBodyAcc-mean()-X 0.2757457
- This means that there are many means associated with subject 2, activity 5 and  variable = tBodyAcc-mean()-X •	tidy_data:
-* idy Data: Using the dcast function we create the tidy data set. o	The input into the dcast function are: (1) melt_alldata, (2) subject + Activity_Label ~ variable and (3) mean. 	Essentially, the dcast function calculates the mean for each of the variables. Remember, the variables used to be the features (measurements).As an example, part of the output of the dcast function will be the mean for the  tBodyAcc-mean()-X variable (see above bullet). The end result is a data frame that consist of 180 rows and 81 columns. This makes sense. There are 30 subjects, 6 activity levels and 79 features (measurements) that are being tracked. 	Each of the rows  in the tidy_data set consists of: (1) subject, (2) Activity_Label and (3) 79 values for a total of 81 elements in a row. Therefore, the tidy data set will have 180 rows and 81 columns.
+ 
+This means that there are many means associated with subject 2, activity 5 and  variable = tBodyAcc-mean()-X.
+
+* Tidy Data: Using the dcast function we create the tidy data set. The input into the dcast function are: (1) melt_alldata, (2) subject + Activity_Label ~ variable and (3) mean. The dcast function calculates the mean for each of the variables. Remember, the variables used to be the features (measurements).As an example, part of the output of the dcast function will be the mean for the  tBodyAcc-mean()-X variable (see above bullet). The end result is a data frame that consist of 180 rows and 81 columns. This makes sense. There are 30 subjects, 6 activity levels and 79 features (measurements) that are being tracked. 	Each of the rows  in the tidy_data set consists of: (1) subject, (2) Activity_Label and (3) 79 values for a total of 81 elements in a row. Therefore, the tidy data set will have 180 rows and 81 columns.
 
