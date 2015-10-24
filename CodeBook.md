@@ -1,7 +1,7 @@
 # Purpose of Document
 
 This document gives the code book for the Coursera Class Project for the course “Getting and Cleaning Data”. 
-A code book should contain the following: (1) The variables used,	the data used, the transformations that were done to clean up the data.
+A code book should contain the following: (1) The variables used,	(2) the data used, (3) the transformations that were done to clean up the data.
 
 # Background
 
