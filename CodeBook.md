@@ -83,7 +83,7 @@ I downloaded the file by hand, extracted it and put it into a directory on my PC
 ** File describes the features (measurements).
 ** File was not used in analysis. Just used to better understand what features mean.
 
-*Variables Used and Manipulation of Variables:
+# Variables Used and Manipulation of Variables:
 * activity_labels: This variable contains the 6 activities. It is extracted from the activity labels file. We are using the second column.
 * features: o	This variable contains a list of 561 features (measurements). We are using the second column of the feature file.
 * match_features: o	This variable is a TRUE/FASLE vector. TRUE = (mean or standard deviation). FALSE != (mean or standard deviation).
