@@ -42,28 +42,21 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 I downloaded the file by hand, extracted it and put it into a directory on my PC.
 
 #Data Used: Files and File Content
-*Test (dir)
-	I**nertial_Signals (dir)
-   Data in this directory was not used.
-	subject_test (file):
-•	This file contains 2947 rows and one column.
-•	The numbers in the rows are the subjects. Subjects are identified by numbers from 1 to 30 (30 subjects/people took part in the experiment).
-•	The subjects are people that participated in the experiment.
-•	Read this file into R and then used the nrow() and ncol() functions to identify the number of rows and columns. Also looked at the file using WordPad.
-	X_test (file)
-•	This file contains 2947 rows and 561 columns.
-o	Identified this by reading data into R and then used dim() function on the data frame.
-•	The documents refer to the values in the columns as features.
-•	Features are really measurements like acceleration, body acceleration jerk, etc.
-	y_test (file)
-•	This file contains 2947 rows and 1 column.
-•	The numbers in the rows are associated with activity labels.
-•	There are six activity labels. For example activity label 1 is associated with walking.
-•	 Read this file into R and then looked at the dimensions with nrow() and ncol() functions.
-o	Train (dir)
-	Inertial_Signals(dir)
-•	Data in this directory was not used.
-	subject_train (file):
+* subject_test (file): This file contains 2947 rows and one column.
+ ** The numbers in the rows are the subjects. Subjects are identified by numbers from 1 to 30 (30 subjects/people took part in the experiment).
+ ** The subjects are people that participated in the experiment.
+ ** Read this file into R and then used the nrow() and ncol() functions to identify the number of rows and columns. Also looked at the file using WordPad.
+* X_test (file)
+  ** This file contains 2947 rows and 561 columns.
+  ** Identified this by reading data into R and then used dim() function on the data frame.
+  ** The documents refer to the values in the columns as features.
+  ** Features are really measurements like acceleration, body acceleration jerk, etc.
+* y_test (file)
+ ** This file contains 2947 rows and 1 column.
+ ** The numbers in the rows are associated with activity labels.
+ ** There are six activity labels. For example activity label 1 is associated with walking.
+ ** Read this file into R and then looked at the dimensions with nrow() and ncol() functions.
+* subject_train (file):
 •	This file contains 7352 rows and one column.
 •	The numbers in the rows are the subjects. Subjects are identified by numbers from 1 to 30 (30 subjects/people took part in the experiment).
 •	The subjects are people that participated in the experiment.
