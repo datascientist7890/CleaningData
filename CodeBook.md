@@ -108,6 +108,7 @@ The following describes the variables used and how I manipulated/used them in th
 * alldata_labels: This variable is created by taking the difference between colnames(alldata) and id_labels. The alldata_lables variable consists of 79 values. Those values are the column names like: tBodyAcc-mean()-X, fBodyBodyGyroMag-std(), etc.
 *	melt_alldata: This variable is produced by “melting” the alldata data frame.  The id variables are the id_lables and the measure variables are the alldata_labels variables. There are 3 items used for id_lables. They are “subject”, “Activity_ID” and “Activity_Label”. There are 79 items in the alldata_lables.	The end result of the “melt” function is a data frame that contains 5 columns and 813,621 rows. Essentially, the melt function creates a skinny data frame where each subject, for each activity, for each variable (used to be the called features) has a value. The 10,299x82 data frame was converted into a data frame with 5 columns and 813,621 rows. Essentially 10,299*79 = 813,621. The columns are: “subject” “Activity_ID”  “Activity_Label”  “variable” “value”. 
 Looking at the first 10 rows in the data set we have:
+
 	    subject Activity_ID Activity_Label          variable     value
 	 1:       2           5       STANDING tBodyAcc-mean()-X 0.2571778
 	 2:       2           5       STANDING tBodyAcc-mean()-X 0.2860267
