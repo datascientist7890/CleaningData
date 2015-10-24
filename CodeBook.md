@@ -44,11 +44,9 @@ I downloaded the file by hand, extracted it and put it into a directory on my PC
 # Data Used: Files and File Content
 
 * subject_test (file): This file contains 2947 rows and one column.
- ** The numbers in the rows are the subjects. Subjects are identified by numbers from 1 to 30 (30 subjects/people took part in the experiment).
- ** The subjects are people that participated in the experiment.
- ** Read this file into R and then used the nrow() and ncol() functions to identify the number of rows and columns. Also looked at the file using WordPad.
+ ** The numbers in the rows are the subjects. Subjects are identified by numbers from 1 to 30 (30 subjects/people took part in the experiment).  ** The subjects are people that participated in the experiment.  ** Read this file into R and then used the nrow() and ncol() functions to identify the number of rows and columns. Also looked at the file using WordPad.
 * X_test (file)
-  ** This file contains 2947 rows and 561 columns.
+  ** This file contains 2947 rows and 561 columns.   
   ** Identified this by reading data into R and then used dim() function on the data frame.
   ** The documents refer to the values in the columns as features.
   ** Features are really measurements like acceleration, body acceleration jerk, etc.
@@ -76,31 +74,30 @@ I downloaded the file by hand, extracted it and put it into a directory on my PC
   **This file contains the activity labels. These labels describe the activities the subjects (people who took part in the experiment) performed. 
   ** The file has two columns. First column contains numbers 1 to 6 and the second column contains the description of the activities the subjects (test participants)  performed (like walking, etc.).
 * features (file)
-** his file are the measurements performed during the experiment. For example, the first element in row 2 of the file is tBodyAcc-mean()-X. This is a measurement of the mean body acceleration on the X direction (they are using a X,Y,Z coordinate system).
+** In this file are the measurements performed during the experiment. For example, the first element in row 2 of the file is tBodyAcc-mean()-X. This is a measurement of the mean body acceleration on the X direction (they are using an X,Y,Z coordinate system).
 **This file contains 561 columns and 2 rows. 
 ** The first column has numbers from 1 to 561.
 ** The second column has the description of the measurements. The measurements in the second column are the column names in the X-train and X_test file.
 * features_info
-** File describes the features (measurements).
-** File was not used in analysis. Just used to better understand what features mean.
+** File describes the features (measurements). File was not used in analysis. Just used to better understand what features mean.
 
 # Variables Used and Manipulation of Variables:
 
 * activity_labels: This variable contains the 6 activities. It is extracted from the activity labels file. We are using the second column.
-* features: o	This variable contains a list of 561 features (measurements). We are using the second column of the feature file.
-* match_features: o	This variable is a TRUE/FASLE vector. TRUE = (mean or standard deviation). FALSE != (mean or standard deviation).
-* X_test: o	This variable contains the data from the X_test file. When we read it into R, it is a data frame with 2947 rows and 561 columns.
-* X-test1: o	This variable contains only those columns from the X_test data frame that have mean or std in their name.
+* features: This variable contains a list of 561 features (measurements). We are using the second column of the feature file.
+* match_features:	This variable is a TRUE/FALSE vector. TRUE = (mean or standard deviation). FALSE != (mean or standard deviation).
+* X_test: This variable contains the data from the X_test file. When we read it into R, it is a data frame with 2947 rows and 561 columns.
+* X-test1: This variable contains only those columns from the X_test data frame that have mean or std in their name.
  It was created by only selecting the match_feature names from the X_test data frame.  This data frame has 79 columns and 2947 rows.
-* y_test: o	This variable is derived from the y_test file. It has two columns and 2947 rows. The column names are: “Activity ID” and “Activity Label”.
-* subject_test: o	This variable is derived from the subject_test file. The column name of hat variable is “subject”. Remember, a subject is a person who participated in the experiment. There are 30 different subjects. o	The variable has one column and 2947 rows.
-* test_data: o	This variable is a data frame. It was created by column binding (using cbind() function) using subject_test, y_test and X_test1. o	We were able to do the column binding because all of the variables (date frames) have 2947 rows.
+* y_test: This variable is derived from the y_test file. It has two columns and 2947 rows. The column names are: “Activity ID” and “Activity Label”.
+* subject_test: This variable is derived from the subject_test file. The column name of hat variable is “subject”. Remember, a subject is a person who participated in the experiment. There are 30 different subjects. o	The variable has one column and 2947 rows.
+* test_data:	This variable is a data frame. It was created by column binding (using cbind() function) using subject_test, y_test and X_test1. We were able to do the column binding because all of the variables (date frames) have 2947 rows.
  The variable (data frame) has 82 columns and 2947 rows. The names of the first 3 columns are: “subject”, “Activity_ID”, “Activity Label”.
 * X_train: This variable (data frame) contains the training set data. o	It is analogous to the X_test data frame. o	It consists of 7352 rows and 561 columns.
-* y_train: o	This variable is derived from the y_train file. It has two columns and 7352 rows. The column names are: “Activity ID” and “Activity Label”. This variable (data frame) contains the training set data. o	It is analogous to the  y_test variable.
+* y_train: This variable is derived from the y_train file. It has two columns and 7352 rows. The column names are: “Activity ID” and “Activity Label”. This variable (data frame) contains the training set data. o	It is analogous to the  y_test variable.
 * subject_train:  This variable contains the training set data. It is analogous to the subject_test variable. This variable has one column and 7352 rows.
-* X_train1: o	This variable contains the training set. o	It is analogous to the X_test1 variable. This variable (data frame) has 79 columns and 7352 rows.
-* train_data: This variable is a data frame. It was created by column binding (using cbind() function) using subject_train, y_train and X_train1. o	We were able to do the column binding because all of the variables (date frames) have 7352 rows. o	The variable (data frame) has 82 columns and 7352 rows. The names of the first 3 columns are: “subject”, “Activity_ID”, “Activity Label”.
+* X_train1: This variable contains the training set. o	It is analogous to the X_test1 variable. This variable (data frame) has 79 columns and 7352 rows.
+* train_data: This variable is a data frame. It was created by column binding (using cbind() function) using subject_train, y_train and X_train1. We were able to do the column binding because all of the variables (date frames) have 7352 rows. o	The variable (data frame) has 82 columns and 7352 rows. The names of the first 3 columns are: “subject”, “Activity_ID”, “Activity Label”.
 * alldata: This variable was created by binding rows using the train_data and the test_data data frames. o	This data frame has 10,299 rows (7352 + 2947 = 10,299) and 82 columns.
 * alldata_test_rows: This is a variable I used to check how many of the rows of the alldata data frame are associated with subject (participant) = 6. The result is that there are 325 rows (observations for subject 6). I did similar checks for other subjects and many of the subjects had about 330 observations. An observation is a row in the alldata data frame. The same variable was used to see how many observations there were for subject 4 and activity = 5. Turns out that there are 56 observations for subject 4 and activity = 5 (activity 5 = Standing). I did this checking to see whether the dimensions of the alldata frame makes sense. Overall, there are 30 subjects (persons taking part in experiment) and there are about 340 observations for each of the subjects. This yields a data frame that has approximately 10,200 rows and 82 columns.
 * id_lables: This variable just contains three labels: “subject”, “Acivity_ID” and “Activity_Label”
