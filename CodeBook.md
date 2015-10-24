@@ -76,16 +76,11 @@ I downloaded the file by hand, extracted it and put it into a directory on my PC
   ** The file has two columns. First column contains numbers 1 to 6 and the second column contains the description of the activities the subjects (test participants)  performed (like walking, etc.).
 * features (file)
 ** his file are the measurements performed during the experiment. For example, the first element in row 2 of the file is tBodyAcc-mean()-X. This is a measurement of the mean body acceleration on the X direction (they are using a X,Y,Z coordinate system).
-  **This file contains 561 columns and 2 rows. 
-	** The first column has  numbers from 1 to 561.
-	**hThe second column has the description of the measurements. The measurements in the second column a
-     re the column names in the X-train and X_test file.
-o	features_info
-	File describes the features (measurements).
-	File was not used in analysis. Just used to better understand what features mean.
-o	README
-	Describes the experiment.
-	Read it to understand the data.
-	File not used in analysis.
+**This file contains 561 columns and 2 rows. 
+** The first column has  numbers from 1 to 561.
+** The second column has the description of the measurements. The measurements in the second column are the column names in the X-train and X_test file.
+* features_info
+**File describes the features (measurements).
+**File was not used in analysis. Just used to better understand what features mean.
 
 
