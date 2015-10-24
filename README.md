@@ -8,7 +8,7 @@ This repository describes the work I have been doing for the Coursera course "Ge
 
 # Raw Data
 
-There are a set of files that needed to processed and integrated into a large data frame.
+There are a set of files that needed to be processed and integrated into a large data frame.
 
 There were test files and training files.
 
